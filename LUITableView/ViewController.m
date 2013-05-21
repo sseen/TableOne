@@ -26,7 +26,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     CGRect frame = [self.view bounds];
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-80)];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-100)];
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
@@ -34,7 +34,7 @@
     dataArray = [NSArray arrayWithObjects:
                  @"Google", @"百　度", @"网　易", @"微 博", @"优 酷 网", @"淘 宝 网",
                  @"亚 马 逊", @"艺龙酒店", @"美 团 网", @"上品折扣", @"C N T V", @"腾  讯",
-                 @"新  浪", @"当　当", @"凤 凰 网", @"MSN中文网", @"猫　扑", @"",nil];
+                 @"新  浪", @"当　当", @"凤 凰 网", @"MSN中文网", @"猫　扑", @"s",nil];
     [tableView reloadData];
     
 }
@@ -77,6 +77,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
+//    NSLog(@"%@", lo);
     lo = 40;
     return lo+10;
 }
@@ -84,10 +85,10 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     if (!headerView) {
-        headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 460, 80)] ;
-        headerView.backgroundColor = [UIColor clearColor];
+        headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 80)] ;
+        headerView.backgroundColor = [UIColor purpleColor];
         UILabel *HeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 460, 80)];
-        HeaderLabel.backgroundColor = [UIColor blackColor];
+        HeaderLabel.backgroundColor = [UIColor brownColor];
         HeaderLabel.font = [UIFont boldSystemFontOfSize:17];
         HeaderLabel.textColor = [UIColor whiteColor];
         HeaderLabel.text = @"ssn";
